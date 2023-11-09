@@ -7,3 +7,9 @@ rows = table.find_all('tr')
 #req = requests.get(f"https://cbr.ru/hd_base/ruonia/dynamics/?UniDbQuery.Posted=True&UniDbQuery.From=04.08.2023&UniDbQuery.To=04.11.2023")
 
 data = [[sublist[0], float(sublist[1])] for sublist in data if sublist]
+
+text = "Some text with a date 2023-09-15 in it"
+match = re.search(r'\d{4}-\d{2}-\d{2}', text)
+date_str = match.group()
+date = datetime.strptime(date_str, '%Y-%m-%d').date()
+print(date)
