@@ -1,0 +1,5 @@
+soup = BeautifulSoup(src, 'html.parser')
+
+# Находим все строки таблицы
+table = soup.find('table', class_='data')
+rows = table.find_all('tr')
