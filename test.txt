@@ -5,3 +5,5 @@ table = soup.find('table', class_='data')
 rows = table.find_all('tr')
 
 #req = requests.get(f"https://cbr.ru/hd_base/ruonia/dynamics/?UniDbQuery.Posted=True&UniDbQuery.From=04.08.2023&UniDbQuery.To=04.11.2023")
+
+data = [[sublist[0], float(sublist[1])] for sublist in data if sublist]
